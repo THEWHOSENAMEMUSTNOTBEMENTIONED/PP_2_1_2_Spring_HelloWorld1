@@ -11,4 +11,9 @@ public class AppConfig {
         helloWorld.setMessage("Hello World!");
         return helloWorld;
     }
+    @Bean(name="cat")
+    @Scope("prototype") // Прототип: каждый раз новый экземпляр
+    public Cat getCat() {
+        return new Cat("Tom");
+    }
 }
